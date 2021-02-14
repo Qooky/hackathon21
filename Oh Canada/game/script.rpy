@@ -3,31 +3,73 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
+define N = Character("")
+define MC = Character("[player_name]")
+define Rex = Character("Rex")
+define Thunder = Character("Thunder")
+define Blue = Character("Blue")
+define GUBA = Character("GUBA")
+define Wallace = Character("Wallace")
+define Justin = Character("Justin Trudeau")
 
 
 # The game starts here.
 
 label start:
+    $ player_name = ""
+    $ nameEntry = False
+    scene bg basic with dissolve
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    N "Welcome to the world of Oh, Canada!!"
 
-    scene bg room
+    while not nameEntry:
+        $ player_name = renpy.input("What is your name?")
+        N "Is your name [player_name]?"
+        menu:
+            "{color=#000000}Yes{/color}":
+                $ nameEntry = True
+            "{color=#000000}No{/color}":
+                pass
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    jump scene1
 
-    show eileen happy
+label scene1:
+    scene bg grad with dissolve
+    N "Today is a beautiful day"
+    N "The sun is shining"
+    N "The cherry blossoms are blooming"
+    N "And [player_name] is attending her highschool graduation"
 
-    # These display lines of dialogue.
+    MC "(I can't believe high school is actually over)"
+    MC "(It was a lot of fun, but I'm looking forward to what comes next)"
+    MC "(This time tomorrow, I'll finally be in Canada!)"
+    MC "(I wonder if there will be any cute boys there)"
+    MC "*sigh*"
 
-    e "You've created a new Ren'Py game."
+    jump scene2
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+label scene2:
+    scene bg black with dissolve
+    N "Later that night"
 
-    # This ends the game.
+    scene bg room with dissolve
+    MC "I sure hope I made the right choice..."
+    MC "I'll be leaving my friends and family behind"
+    MC "And if I don't get accepted by any universities, I'll be forced to come back home..."
+    MC "What if people aren't impressed with my maple syrup chugging and polar bear riding skills?"
+    MC "Then all that time I spent practicing would go to waste :^("
+
+    N "You glance at the clock"
+    N "It's getting quite late..."
+
+    MC "Guess there's no point in worrying now"
+    MC "Better get some rest, my flight leaves early tomorrow"
+
+    N "You take a quick swig of maple syrup before getting into bed"
+
+    MC "goodbye Japan"
+
+    scene bg black with dissolve
+    MC "{cps=3}.....{/cps}"
 
     return
