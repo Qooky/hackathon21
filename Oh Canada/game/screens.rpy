@@ -354,12 +354,15 @@ style navigation_button_text:
 
 screen main_menu():
 
+
+
     ## This ensures that any other menu screen is replaced.
     tag menu
 
-    style_prefix "main_menu"
 
+    style_prefix "main_menu"
     add gui.main_menu_background
+
 
     ## This empty frame darkens the main menu.
     frame:
@@ -369,6 +372,7 @@ screen main_menu():
     ## contents of the main menu are in the navigation screen.
     use navigation
 
+'''
     if gui.show_name:
 
         vbox:
@@ -377,7 +381,7 @@ screen main_menu():
 
             text "[config.version]":
                 style "main_menu_version"
-
+'''
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox

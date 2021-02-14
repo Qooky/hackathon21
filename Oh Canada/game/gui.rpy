@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 ## Initialization
 ################################################################################
 
@@ -85,7 +85,8 @@ define gui.title_text_size = 75
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
-define gui.main_menu_background = "gui/main_menu.png"
+define gui.main_menu_background = Movie(play="animations/OCintrographic10s.ogv", loop = True, size=(1920,1080))
+define gui.main_menu_background1 = Movie(play="animations/OCMENUanimation.ogv", loop = True, size=(1920,1080))
 define gui.game_menu_background = "gui/game_menu.png"
 
 
@@ -469,6 +470,3 @@ init python:
 
         gui.nvl_button_width = 1860
         gui.nvl_button_xpos = 30
-
-
-
