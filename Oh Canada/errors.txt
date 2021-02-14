@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/screens.rpy", line 364: u'myChannel' is not a keyword argument or valid child for the screen statement.
+    myChannel = renpy.music.register_channel()
+             ^
+
+Ren'Py Version: Ren'Py 7.4.2.1292
+Sun Feb 14 09:28:19 2021

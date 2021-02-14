@@ -361,6 +361,7 @@ screen main_menu():
 
 
     style_prefix "main_menu"
+    $ renpy.music_start('final.wav')
     add gui.main_menu_background
 
 

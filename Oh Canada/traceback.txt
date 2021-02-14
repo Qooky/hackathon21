@@ -1,0 +1,42 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+IOError: Couldn't find file 'final.wav'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+    python hide:
+  File "/Users/stevensusanto/Desktop/renpy-7.4.2-sdk/renpy/ast.py", line 922, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Users/stevensusanto/Desktop/renpy-7.4.2-sdk/renpy/python.py", line 2218, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
+    python hide:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
+    ui.interact()
+  File "/Users/stevensusanto/Desktop/renpy-7.4.2-sdk/renpy/ui.py", line 298, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Users/stevensusanto/Desktop/renpy-7.4.2-sdk/renpy/display/core.py", line 3007, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "/Users/stevensusanto/Desktop/renpy-7.4.2-sdk/renpy/display/core.py", line 3700, in interact_core
+    renpy.audio.audio.periodic()
+  File "/Users/stevensusanto/Desktop/renpy-7.4.2-sdk/renpy/audio/audio.py", line 1101, in periodic
+    raise_(exc[0], exc[1], exc[2])
+  File "/Users/stevensusanto/Desktop/renpy-7.4.2-sdk/renpy/audio/audio.py", line 1079, in periodic_thread_main
+    periodic_pass()
+  File "/Users/stevensusanto/Desktop/renpy-7.4.2-sdk/renpy/audio/audio.py", line 1021, in periodic_pass
+    c.periodic()
+  File "/Users/stevensusanto/Desktop/renpy-7.4.2-sdk/renpy/audio/audio.py", line 487, in periodic
+    topf = load(self.file_prefix + filename + self.file_suffix)
+  File "/Users/stevensusanto/Desktop/renpy-7.4.2-sdk/renpy/audio/audio.py", line 69, in load
+    rv = renpy.loader.load(fn)
+  File "/Users/stevensusanto/Desktop/renpy-7.4.2-sdk/renpy/loader.py", line 798, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'final.wav'.
+
+Darwin-17.7.0-x86_64-i386-64bit
+Ren'Py 7.4.2.1292
+Oh Canada 1.0
+Sun Feb 14 09:30:28 2021
